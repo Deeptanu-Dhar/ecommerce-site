@@ -631,10 +631,15 @@ body{
 #contact-hero .contact-hero-text p{
 	font-size: 80px;
 	font-family: 'DelaGothic', sans-serif;
-	color: rgb(29, 196, 181);
-/*	text-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);*/
+	color: rgb(74, 102, 112);
+/*	color: rgb(29, 196, 181);*/
+	text-shadow: 0px 0px 25px rgba(74, 102, 112, 0.3);
 	padding-top: 20px;
-	font-style: italic;
+/*	font-style: italic;*/
+/*	background-color: rgba(29, 196, 181, 0.2);*/
+	background-color: rgba(200, 200, 0, 0.2);
+	border-radius: 100px 15%;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   	
 }
 
@@ -697,6 +702,7 @@ body{
 
 #contact-details .details li p{
 	margin: 0;
+	color: rgb(74, 102, 112);
 }
 
 #contact-details .map{
@@ -808,3 +814,125 @@ body{
 	background-color: #4a6670;
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~about page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#aboutus{
+	padding: 60px;
+	background-color: whitesmoke;
+	position: relative;
+	isolation: isolate;
+	--bg-image-4:url("img/pattern2.png") ;
+	--bg-image-opacity-4: 0.1;
+}
+
+#aboutus::after{
+	content:'';
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	opacity:var(--bg-image-opacity-4);
+	background-image:linear-gradient(to top,rgba(255, 255, 255, 0),
+						rgba(255, 255, 255, 1.0)),var(--bg-image-4);
+	background-size: contain;
+	background-position: center;
+}
+
+#aboutus .heading{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	isolation: isolate;
+}
+
+#aboutus h1{
+	text-align: center;
+	margin: 30px 0px;
+	font-size: 60px;
+	background-color: rgba(200, 200, 0, 0.2);
+	border-radius: 100px 50%;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#aboutus h1 span{
+	font-family: 'More Sugar Regular', sans-serif;
+	letter-spacing: 6px;
+	color: #1dc4b5;
+/*	text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+}
+
+#aboutus h2{
+	font-size: 40px;
+	font-family: 'DelaGothic', monospace, sans-serif;
+	margin: 40px 0px;
+}
+
+#aboutus img{
+	float: right;
+	height: auto;
+	width: 40%;
+	margin: 20px;
+}
+
+#aboutus p{
+	font-size: 18px;
+}
+
+#aboutus > p{
+	
+	margin: 30px 0px;
+}
+
+#aboutus p span{
+	color: #1dc4b5;
+}
+
+#aboutus .about-details{
+	margin: 20px 0px;
+}
+
+#aboutus .about-details p{
+	color:#4a6670 ;
+}
+
+#aboutus .about-details h3{
+	margin: 30px 0px;
+	padding: 10px;
+	width: fit-content;
+	background-color: rgba(29, 196, 181, 0.2);
+	border-radius: 100px 50%;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	font-size: 21px;
+	font-family: 'noto-medium', monospace, sans-serif;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+}
+
+/*#aboutus .about-details h3:nth-child(1){
+
+}
+
+#aboutus .about-details h3:nth-child(2){
+
+}
+
+#aboutus .about-details h3:nth-child(3){
+
+}
+
+#aboutus .about-details h3:nth-child(4){
+
+}
+
+#aboutus .about-details h3:nth-child(5){
+
+}
+
+#aboutus .about-details h3:nth-child(6){
+
+}
+
+#aboutus .about-details h3:nth-child(7){
+
+}
+*/
