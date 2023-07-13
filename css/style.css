@@ -154,7 +154,7 @@ body{
 
 #hero{
 
-	--bg-image:url("img/pattern1.png") ;
+	--bg-image:url("../img/pattern1.png") ;
 	--bg-image-opacity: 0.25;
 
 	height: 95vh;
@@ -337,7 +337,7 @@ body{
 
 #about-us{
 
-	--bg-image-2:url("img/bg.jpg") ;
+	--bg-image-2:url("../img/bg.jpg") ;
 	--bg-image-opacity-2: 0.1;
 
 	width: 100%;
@@ -418,7 +418,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-image: url('img/artbg2.jpg');
+	background-image: url('../img/artbg2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 93vh;
@@ -603,7 +603,7 @@ body{
 	display: flex;
 	justify-content: space-between;
 	padding: 30px;
-	--bg-image-3:url("img/bg (3).jpg") ;
+	--bg-image-3:url("../img/bg (3).jpg") ;
 	--bg-image-opacity-3: 0.1;
 	align-items: center;
 	width: 100%;
@@ -727,7 +727,7 @@ body{
 	margin: 0px;
 	position: relative;
 	isolation: isolate;
-	--bg-image-3:url("img/bg (3).jpg") ;
+	--bg-image-3:url("../img/bg (3).jpg") ;
 	--bg-image-opacity-3: 0.2;
 }
 
@@ -818,10 +818,10 @@ body{
 
 #aboutus{
 	padding: 60px;
-	background-color: whitesmoke;
+	background-color: rgb(243,243,243);
 	position: relative;
 	isolation: isolate;
-	--bg-image-4:url("img/pattern2.png") ;
+	--bg-image-4:url("../img/pattern2.png") ;
 	--bg-image-opacity-4: 0.1;
 }
 
@@ -831,8 +831,8 @@ body{
 	z-index: -1;
 	inset: 0;
 	opacity:var(--bg-image-opacity-4);
-	background-image:linear-gradient(to top,rgba(255, 255, 255, 0),
-						rgba(255, 255, 255, 1.0)),var(--bg-image-4);
+	background-image:linear-gradient(to bottom,rgba(255, 255, 255, 0.5),
+						rgba(255, 255, 255, 0)),var(--bg-image-4);
 	background-size: contain;
 	background-position: center;
 }
@@ -908,31 +908,3 @@ body{
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
 }
 
-/*#aboutus .about-details h3:nth-child(1){
-
-}
-
-#aboutus .about-details h3:nth-child(2){
-
-}
-
-#aboutus .about-details h3:nth-child(3){
-
-}
-
-#aboutus .about-details h3:nth-child(4){
-
-}
-
-#aboutus .about-details h3:nth-child(5){
-
-}
-
-#aboutus .about-details h3:nth-child(6){
-
-}
-
-#aboutus .about-details h3:nth-child(7){
-
-}
-*/
