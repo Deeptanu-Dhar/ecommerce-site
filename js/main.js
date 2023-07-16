@@ -38,3 +38,14 @@ document.addEventListener("click", (event) => {
     contactForm.classList.remove("shadow-style2");
   }
 });
+
+// ---------------------------user window-----------------------
+
+let profile = document.querySelector('#header .profile');
+let userIcon = document.querySelector('#header #user-btn');
+
+document.querySelector('#user-btn').onclick = () =>{
+	profile.classList.toggle('active');
+	userIcon.classList.toggle('active');
+
+}
