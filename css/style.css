@@ -188,6 +188,24 @@ body{
 	border-radius: 30px;
 }
 
+.form-container .form-input-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+}
+
+.form-container form .form-icon{
+	font-size: 20px;
+	margin: auto;
+	margin-right: 15px;
+	color: whitesmoke;
+}
+
+.form-container form .btn{
+	border: 1px solid whitesmoke;
+}
+
 .form-container form h3{
 	padding: 20px;
 	font-size: 1.5em;
@@ -208,8 +226,9 @@ body{
 }
 
 .form-container form input[type="text"],
-.form-container form input[type="password"]{
-	width: 100%;	
+.form-container form input[type="password"],
+.form-container form input[type="email"]{
+	width: 18rem;	
 	padding: 10px;
 	outline: none;
 	border: 1px solid transparent;
@@ -323,6 +342,15 @@ body{
 	color: whitesmoke ;
 	cursor: pointer;
 	margin-right: 20px;
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}
+#header .icons .icon-title{
+	font-size: 10px;
+	margin-left: 10px;
+	font-weight: 600;
+
 }
 
 #header .icons a{
@@ -338,11 +366,6 @@ body{
 	font-size: 10px;
 	margin-left: 5px;
 	font-weight: 600;
-}
-
-#header #menu-btn, #header #user-btn{
-	margin-left: 1.7rem;
-	transition: 0.1s ease;
 }
 
 #header #user-btn{
@@ -387,6 +410,7 @@ body{
 
 #header .profile.active{
 	display: inline-block;
+	z-index: 99;
 	
 }
 
@@ -591,14 +615,13 @@ body{
    position: relative;
    padding:2rem;
    border-radius: .5rem;
-   border:var(--border);
    width: 100%;
-   background-color: var(--white);
-   box-shadow: var(--box-shadow);
-   margin-bottom: 5rem;
+   background-color: whitesmoke;
+   margin-bottom: 3rem;
    overflow: hidden;
    user-select: none;
    background-color: whitesmoke;
+   height: 25em;
    border: 1px solid rgba(130, 130, 130, 0.1);
    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.5) ;
 }
@@ -1246,6 +1269,19 @@ body{
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~SHOP PAGE~~~~~~~~~~~~~~~~~~~~~*/
+
+.shop-products-heading{
+	width: 100%;
+	text-align: center;
+}
+
+.shop-products-heading h1{
+	font-family: "concert", sans-serif, monospace;
+	color: #1dc4b5;
+	font-size: 50px;
+	letter-spacing: 3px;
+	text-shadow: 0px 10px 15px rgba(80, 80, 100, 0.19);
+}
 
 .shop-products{
 	padding: 30px 30px;

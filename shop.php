@@ -21,7 +21,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
+  <title>Shop Now</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
 </head>
@@ -39,6 +39,10 @@
 
   <section class="shop-products">
 
+    <div class="shop-products-heading">
+   <h1>SHOP PRODUCTS</h1>
+</div>
+
    <?php
      while($row = $result->fetch_assoc()){
    ?>
@@ -52,7 +56,7 @@
       <img src="<?php echo $row ['product_image']; ?>" alt=""></a>
       <div class="name"><?php echo $row['product_name']; ?></div>
       <div class="flex">
-         <div class="price"><span>$</span><?php echo $row['product_price']; ?><span>/-</span></div>
+         <div class="price"><span style="color: #1dc4b5; margin-right: 7px; font-size: 16px;">₹</span><?php echo $row['product_price']; ?><span>/-</span></div>
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
       <input type="submit" value="add to cart" class="btn" name="add_to_cart">

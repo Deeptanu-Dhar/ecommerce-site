@@ -20,6 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
+  <title>Contact Us</title>
   <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -96,7 +97,7 @@
 
   <?php include 'components/user_footer.php'?>
 
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

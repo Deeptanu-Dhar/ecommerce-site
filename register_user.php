@@ -17,6 +17,8 @@ if(isset($_POST['submit'])){
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+   $email = sha1($_POST['email']);
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
    $cpass = sha1($_POST['cpass']);
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
@@ -30,8 +32,8 @@ if(isset($_POST['submit'])){
          $message[]= 'Confirm password does not match !';
       }
       else{
-         $insert_user = $conn->prepare("INSERT INTO `users`(name, password) VALUES(?,?)");
-         $insert_user->execute([$name, $cpass]);
+         $insert_user = $conn->prepare("INSERT INTO `users`(name, password, email) VALUES(?,?,?)");
+         $insert_user->execute([$name, $cpass, $email]);
          $message[]= 'New User registered !';
       }
    }
@@ -64,9 +66,28 @@ if(isset($_POST['submit'])){
    <form action="" method="post">
 
       <h3>Register new</h3>
-      <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="cpass" required placeholder="confirm password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <div class="form-input-wrapper">
+         <i class="fa-regular fa-user form-icon"></i>
+         <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+
+      <div class="form-input-wrapper">
+         <i class="fa-regular fa-envelope form-icon"></i>
+         <input type="email" name="email" required placeholder="enter your email" maxlength="30"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-lock form-icon"></i>
+         <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+      
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-lock form-icon"></i>
+         <input type="password" name="cpass" required placeholder="confirm password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+      
+      
+      
       <input type="submit" value="Register" class="btn" name="submit">
    </form>
 

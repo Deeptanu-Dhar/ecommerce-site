@@ -21,7 +21,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
+  <title>A R T i O</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
 </head>

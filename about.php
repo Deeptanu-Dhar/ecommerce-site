@@ -19,15 +19,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Us</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-  <a href="#" class="to-top">
-    <i class="fa-solid fa-angle-up"></i>
-  </a>
+<a href="#" class="to-top">
+  <i class="fa-solid fa-angle-up"></i>
+</a>
 
 <?php include 'components/user_header.php'?>
 
