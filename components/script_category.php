@@ -20,7 +20,7 @@
 	//get total no. of rows
 
 
-	$records = $mysqli->query("SELECT * FROM products");
+	$records = $mysqli->query("SELECT * FROM products where product_category like '%{$category}%'");
 
 	$nr_of_rows = $records->num_rows;
 
@@ -37,8 +37,6 @@
 	}
 
 
-	$result = $mysqli->query("SELECT * FROM products LIMIT $start, $rows_per_page");
+	$result = $mysqli->query("SELECT * FROM products where product_category like '%{$category}%' LIMIT $start, $rows_per_page");
 
  ?>
-
-

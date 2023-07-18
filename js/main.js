@@ -49,3 +49,34 @@ document.querySelector('#user-btn').onclick = () =>{
 	userIcon.classList.toggle('active');
 
 }
+
+//----------------------------zoom on mouse hover---------------------
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const productImage = document.getElementById("productImg");
+  const magnifier = document.querySelector(".magnifier");
+
+  productImage.addEventListener("mousemove", function(event) {
+    const imageWidth = productImage.offsetWidth;
+    const imageHeight = productImage.offsetHeight;
+
+    const magnifierWidth = magnifier.offsetWidth;
+    const magnifierHeight = magnifier.offsetHeight;
+
+    const rect = productImage.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const offsetX = x / imageWidth * (imageWidth - magnifierWidth);
+    const offsetY = y / imageHeight * (imageHeight - magnifierHeight);
+
+    magnifier.style.display = "block";
+    magnifier.style.backgroundImage = `url('${productImage.src}')`;
+    magnifier.style.backgroundPosition = `-${offsetX}px -${offsetY}px`;
+  });
+
+  productImage.addEventListener("mouseleave", function() {
+    magnifier.style.display = "none";
+  });
+});

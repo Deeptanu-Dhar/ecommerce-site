@@ -35,6 +35,7 @@
 
 <?php include 'components/user_header.php'?>
 <?php include 'components/wishlist_cart.php'?>
+<?php include 'components/script.php'?>
 
 
   <section id="hero">

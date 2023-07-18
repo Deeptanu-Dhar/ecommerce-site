@@ -256,6 +256,20 @@ body{
 	border-radius: 30px;
 }
 
+.form-container .form-input-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+}
+
+.form-container form .form-icon{
+	font-size: 20px;
+	margin: auto;
+	margin-right: 15px;
+	color: whitesmoke;
+}
+
 .form-container form h3{
 	padding: 20px;
 	font-size: 1.5em;
@@ -277,7 +291,7 @@ body{
 
 .form-container form input[type="text"],
 .form-container form input[type="password"]{
-	width: 100%;	
+	width: 24em;	
 	padding: 10px;
 	outline: none;
 	border: 1px solid transparent;
@@ -490,7 +504,7 @@ td{
 	height: 100%;
 	max-width: 60%;
 	object-fit: contain;
-	margin: 0px 5px;
+	margin: auto;
 	border-radius: 10px;
 }
 

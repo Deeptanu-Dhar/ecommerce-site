@@ -63,9 +63,21 @@ if(isset($_POST['submit'])){
    <form action="" method="post">
 
       <h3>Register new</h3>
-      <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="cpass" required placeholder="confirm password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <div class="form-input-wrapper">
+         <i class="fa-regular fa-user form-icon"></i>
+         <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-lock form-icon"></i>
+         <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+      
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-key .form-icon"></i>
+         <input type="password" name="cpass" required placeholder="confirm password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+      
       <input type="submit" value="Register" class="btn" name="submit">
    </form>
 

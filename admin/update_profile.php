@@ -84,10 +84,27 @@ if(isset($_POST['submit'])){
 
       <h3>Update Profile</h3>
       <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>">
-      <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name'];?>">
-      <input type="password" name="old_pass" required placeholder="enter old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="new_pass" required placeholder="enter new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="confirm_pass" required placeholder="confirm new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-user form-icon"></i>
+         <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')" value="<?= $fetch_profile['name'];?>">
+      </div>
+      
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-lock form-icon"></i>
+        <input type="password" name="old_pass" required placeholder="enter old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')"> 
+      </div>
+      
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-lock form-icon"></i>
+         <input type="password" name="new_pass" required placeholder="enter new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+      
+      <div class="form-input-wrapper">
+         <i class="fa-solid fa-key form-icon"></i>
+         <input type="password" name="confirm_pass" required placeholder="confirm new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      </div>
+      
       <input type="submit" value="Update" class="btn" name="submit">
    </form>
 

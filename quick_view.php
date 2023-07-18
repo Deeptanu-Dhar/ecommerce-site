@@ -62,20 +62,27 @@ else{
         <input type="hidden" name="price" value="<?= $fetch_product['product_price']; ?>">
         <input type="hidden" name="image" value="<?= $fetch_product['product_image']; ?>">
         <div class="product-image-wrapper">
-          <a href="<?= $fetch_product['product_image']; ?>" target="_blank"><img src="<?= $fetch_product['product_image']; ?>" alt=""></a>
+          <a href="<?= $fetch_product['product_image']; ?>" target="_blank"><img src="<?= $fetch_product['product_image']; ?>" alt="" id="productImg"></a>
+          <div class=".magnifier"></div>
         </div>
 
         <div class="content">
 
-          <div class="name"><?= $fetch_product['product_name']; ?></div>
-          <div class="details">
-            <?= $fetch_product['product_description']; ?></div>
+          <div class="name">
+            <h1><?= $fetch_product['product_name']; ?></h1>
+          </div>
+          <div class="details-heading">
+            <h2>Description</h2>
+          </div>
+          <div class="details"> 
+            <?= $fetch_product['product_description']; ?>
+          </div>
           <div class="flex">
-           <div class="price"><span style="color: #1dc4b5; margin-right: 7px; font-size: 16px;">₹</span><?= $fetch_product['product_price']; ?><span>/-</span></div>
+           <div class="price"><span class="price-sign">₹</span><?= $fetch_product['product_price']; ?><span>/-</span></div>
            <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
          </div>
          <div class="flex-btn">
-          <input type="submit" value="add to wishlist" class="btn" name="add_to_wishlist">
+          <input type="submit" value="add to wishlist" class="btn wishlist" name="add_to_wishlist">
           <input type="submit" value="add to cart" class="btn" name="add_to_cart">
         </div>
       </div>

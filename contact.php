@@ -37,7 +37,7 @@
       <p>CONTACT US</p>
     </div>
     <div class="contact-hero-img">
-      <img src="img/contact.png" type="img/png" alt="contact-img">
+      <img src="img/contact.png" type="img/png" alt="contact-img" id="productImg">
     </div>
   </section>
 
