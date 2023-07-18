@@ -39,9 +39,9 @@
 
   <section class="shop-products">
 
-    <div class="shop-products-heading">
-   <h1>SHOP PRODUCTS</h1>
-</div>
+  <div class="shop-products-heading">
+    <h1>SHOP PRODUCTS</h1>
+  </div>
 
    <?php
      while($row = $result->fetch_assoc()){

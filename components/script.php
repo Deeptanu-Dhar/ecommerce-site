@@ -39,5 +39,7 @@
 
 	$result = $mysqli->query("SELECT * FROM products LIMIT $start, $rows_per_page");
 
+	$result_2 = $mysqli->query("SELECT * FROM products");
+
  ?>
 
