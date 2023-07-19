@@ -29,8 +29,17 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
 </head>
+<?php 
+  if(isset($_GET['page-nr'])){
+    $id = $_GET['page-nr'];
+  }
+  else{
+    $id = 1;
+  }
 
-<body>
+ ?>
+
+<body id="<?= $id ?>">
 
   <a href="#" class="to-top">
     <i class="fa-solid fa-angle-up"></i>
@@ -184,6 +193,11 @@
  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 <script src="js/main.js"></script>
+<script>
+  let links = document.querySelectorAll('.page-numbers > a');
+  let bodyId = parseInt(document.body.id) - 1 ;
+  links[bodyId].classList.add("active");
+</script>
 
 </body>
 </html>

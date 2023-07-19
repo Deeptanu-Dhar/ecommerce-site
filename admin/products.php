@@ -56,7 +56,7 @@ else{
 
  ?>
 
-<body id="<?php echo $id ?>">
+<body id="<?= $id ?>">
 
    <?php include '../components/admin_header.php' ?>
 
@@ -174,7 +174,7 @@ else{
          for ($counter=1; $counter <= $pages ; $counter++) { 
             ?>
 
-            <a href="?page-nr=<?php echo $counter ?>"><?php echo $counter ?></a>
+            <a href="?page-nr=<?php echo $counter ?>" id="page-no"><?php echo $counter ?></a>
 
             <?php
          }
@@ -218,12 +218,11 @@ else{
 
 </div>
 
-
-<script>
-   let links = document.querySelectorAll('.page-numbers > a');
-   let bodyId = parseInt(document.body.id) - 1;
-   links[bodyId].classList.add("active");
-</script>
 <script src="../js/admin_script.js"></script>
+<script>
+  let link = document.querySelectorAll("#page-no")
+  let bodyIds = parseInt(document.body.id) - 1 ;
+  link[bodyIds].classList.add("active");
+</script>
 </body>
 </html>

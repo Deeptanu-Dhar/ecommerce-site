@@ -545,7 +545,7 @@ td{
 	border-radius: 3px;
 }
 
-.pagination .page-numbers a.active{
+.page-numbers a.active{
 	background-color: #4a6670;
 	color: whitesmoke;
 }
