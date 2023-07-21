@@ -45,8 +45,8 @@ else{
 
 
 <?php include 'components/user_header.php'?>
-<?php include 'components/wishlist_cart.php'?>
 <?php include 'components/script.php'?>
+ <!-- include 'components/wishlist_cart.php' -->
 
   <section class="shop-products">
 
@@ -58,16 +58,16 @@ else{
      while($row = $result->fetch_assoc()){
    ?>
    <form action="" method="post" class="box">
-      <input type="hidden" name="pid" value="<?= $fetch_product['product_id']; ?>">
-      <input type="hidden" name="name" value="<?= $fetch_product['product_name']; ?>">
-      <input type="hidden" name="price" value="<?= $fetch_product['product_price']; ?>">
-      <input type="hidden" name="image" value="<?= $fetch_product['product_image']; ?>">
+      <input type="hidden" name="pid" value="<?php echo $row['product_id']; ?>">
+      <input type="hidden" name="name" value="<?php echo $row['product_name']; ?>">
+      <input type="hidden" name="price" value="<?php echo $row['product_price']; ?>">
+      <input type="hidden" name="image" value="<?php echo $row['product_image']; ?>">
       <button class="fas fa-heart" type="submit" name="add_to_wishlist"></button>
       <a href="quick_view.php?pid=<?php echo $row['product_id']; ?>">
       <img src="<?php echo $row ['product_image']; ?>" alt=""></a>
       <div class="name"><?php echo $row['product_name']; ?></div>
       <div class="flex">
-         <div class="price"><span style="color: #1dc4b5; margin-right: 7px; font-size: 16px;">₹</span><?php echo $row['product_price']; ?><span>/-</span></div>
+         <div class="price"><span class="price-sign">₹</span><?php echo $row['product_price']; ?><span>/-</span></div>
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
       <input type="submit" value="add to cart" class="btn" name="add_to_cart">

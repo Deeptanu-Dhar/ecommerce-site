@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
-  
-
-</head>
-
-<body>
   <?php
    if(isset($message)){
       foreach($message as $message){
@@ -24,9 +11,7 @@
    }
    ?>
 
-  <!-- <a href="#" class="to-top">
-    <i class="fa-solid fa-angle-up"></i>
-  </a> -->
+   <?php include 'wishlist_cart.php' ?>
 
   <section id="header">
     <div class="logo">
@@ -38,7 +23,8 @@
         <li><a class="active" href="index.php">Home</a></li>
         <li><a href="shop.php">Shop</a></li>
         <li><a href="about.php">About</a></li>
-        <li><a href="contact.php">Contact Us</a></li>         
+        <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="orders.php">Orders</a></li>         
       </ul>
     </div>
 
@@ -59,7 +45,7 @@
 
       <a href="cart.php"><i class="fas fa-cart-shopping"></i><span class="icon-title">CART</span><span>[<?= $total_cart_counts; ?>]</span></a>
 
-      <div id="user-btn" class="fas fa-user"><span class="icon-title">ACCOUNT</span></div>
+      <div id="user-btn" class="fas fa-user"><span class="icon-title"><?php if(isset($_SESSION['user_id'])){echo "ACCOUNT";}else{echo "LOGIN";} ?></span></div>
     </div>
 
     <div class="profile">
@@ -72,7 +58,7 @@
          <p><?= $fetch_profile["name"]; ?></p>
          <a href="update_user.php" class="btn">update profile</a>
          <div class="flex-btn">
-            <a href="user_register.php" class="option-btn">register</a>
+            <a href="register_user.php" class="option-btn">register</a>
             <a href="user_login.php" class="option-btn">login</a>
          </div>
          <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
@@ -92,7 +78,3 @@
     </div>
   </section>
 
-<script type="text/javascript" src="../js/main.js"></script>
-
-</body>
-</html>
