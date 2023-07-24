@@ -50,9 +50,6 @@ if(isset($_GET['cancel_all'])){
    <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
 
 </head>
-<a href="#" class="to-top">
-  <i class="fa-solid fa-angle-up"></i>
-</a>
 
 <?php 
 
@@ -69,7 +66,10 @@ else{
 
    <?php include 'components/user_header.php' ?>
 
-   
+   <a href="#" class="to-top">
+      <i class="fa-solid fa-angle-up"></i>
+   </a>
+
 
    <div class="orders-heading">
      <h1>Your Orders</h1>
@@ -132,17 +132,19 @@ else{
          </tr>
          <tr>
             <th>Cancel Order</th>
-            <td><a href="?cancel_order=<?= $fetch_orders['id']?>"><i class="fa-regular fa-circle-xmark"></i></a></td>
+            <td><a href="?cancel_order=<?= $fetch_orders['id']?>" onclick="return confirm('Cancel this order ?')"><i class="fa-regular fa-circle-xmark"></i></a></td>
          </tr>
 
       </table>
    </div>
+   <?php 
+      } 
+   ?>
    <div class="cancel-all">
-   <a href="?cancel_all=0" class="delete-btn">Cancel all orders</a>
+   <a href="?cancel_all=0" class="delete-btn" onclick="return confirm('Cancel all orders ?')">Cancel all orders</a>
    </div>
 
    <?php
-      }
    }else{
       echo '<div class="empty-text"><p class="empty">No orders placed !</p></div>
         <div class="cart-btn">

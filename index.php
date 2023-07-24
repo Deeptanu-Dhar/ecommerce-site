@@ -41,8 +41,7 @@
   <section id="hero">
     <div class="herocontent">
       <h1>Art Accessories</h1>
-      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      <h3>Unleash Your Creativity with Our Premium Art Accessories. Browse a curated selection of brushes, canvases, palettes, and more. Elevate your artistic journey with top-quality tools. Shop now for inspiration!
       </h3>
       <a href="#product-categories">VIEW PRODUCTS</a>
     </div>
@@ -149,21 +148,7 @@
     </div>
   </section>
 
-  <div class="banner">
-    <p>NEWSLETTER</p>
-  </div>
-  <section id="newsletter">
-    <div class="news-content">
-      <div class="news-text">
-        <h1>Subscribe to our <br>newsletter</h1>
-        <p>Stay Updated about the latest products</p>
-      </div>
-      <form id="news-form" class="news-form" action="" method="">
-        <input type="email" id="email" name="email" placeholder="email" required><br>
-        <input type="submit" value="Subscribe">
-      </form>
-    </div>
-  </section>
+ <?php include 'components/user_newsletter.php'?>
 
  <?php include 'components/user_footer.php'?>
 

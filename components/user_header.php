@@ -45,7 +45,22 @@
 
       <a href="cart.php"><i class="fas fa-cart-shopping"></i><span class="icon-title">CART</span><span>[<?= $total_cart_counts; ?>]</span></a>
 
-      <div id="user-btn" class="fas fa-user"><span class="icon-title"><?php if(isset($_SESSION['user_id'])){echo "ACCOUNT";}else{echo "LOGIN";} ?></span></div>
+          <div id="user-btn" class="fas fa-user">
+            <span class="icon-title">
+                <?php if(isset($_SESSION['user_id'])){
+                    $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+                    $select_profile->execute([$user_id]);
+                    if($select_profile->rowCount() > 0){
+                        $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+                        echo $fetch_profile["name"];
+                    }
+                }
+                else{
+                    echo "LOGIN";
+                } 
+                ?>
+            </span>
+        </div>
     </div>
 
     <div class="profile">

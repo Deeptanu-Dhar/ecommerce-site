@@ -73,22 +73,8 @@
     
   </section>
 
-  <div class="banner">
-    <p>NEWSLETTER</p>
-  </div>
 
-  <section id="newsletter">
-    <div class="news-content">
-      <div class="news-text">
-        <h1>Subscribe to our <br>newsletter</h1>
-        <p>Stay Updated about the latest products</p>
-      </div>
-      <form id="news-form" class="news-form" action="" method="">
-        <input type="email" id="email" name="email" placeholder="email" required><br>
-        <input type="submit" value="Subscribe">
-      </form>
-    </div>
-  </section>
+<?php include 'components/user_newsletter.php'?>
 
 <?php include 'components/user_footer.php'?>
 

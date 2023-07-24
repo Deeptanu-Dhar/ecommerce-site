@@ -11,6 +11,26 @@
     $user_id = '';
   }
 
+  if (isset($_POST['submit-contact'])) {
+
+    $name=$_POST['name'];
+    $name=filter_var($name, FILTER_SANITIZE_STRING);
+
+    $email=$_POST['email'];
+    $email=filter_var($email, FILTER_SANITIZE_STRING);
+
+    $subject=$_POST['subject'];
+    $subject=filter_var($subject, FILTER_SANITIZE_STRING);
+
+    $message_cont=$_POST['message'];
+    $message_cont=filter_var($message_cont, FILTER_SANITIZE_STRING);
+
+    $submit_message=$conn->prepare("INSERT INTO `messages` (user_id, name, email, subject,message) VALUES (?,?,?,?,?)");
+    $submit_message->execute([$user_id, $name, $email, $subject, $message_cont]);
+    $message[]='Message submitted !';
+
+  }
+
  ?>
 
 <!DOCTYPE html>
@@ -69,31 +89,17 @@
   <section id="contact-form">
     <h1>WE LOVE TO HEAR FROM YOU !</h1>
     <span>Leave a message </span>
-    <form id="form-container" class="" action="">
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Email address" required>
-      <input type="text" placeholder="Subject" required>
-      <textarea name="" id="" cols="20" rows="5" placeholder="Your Message" required></textarea>
-      <input type="submit" value="submit">
+    <form id="form-container" class="" action="" method="POST">
+      <input type="text" name="name" placeholder="Your name" maxlength="30" required oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="email" name="email" placeholder="Email address" maxlength="30" required oninput="this.value = this.value.replace(/\s/g, '')">
+      <input type="text" name="subject" placeholder="Subject" maxlength="50" required >
+      <textarea name="message" id="" cols="20" rows="5" placeholder="Your Message" maxlength="100" required></textarea>
+      <input type="submit" name="submit-contact" value="submit">
     </form>
   </section>
 
-  <div class="banner">
-    <p>NEWSLETTER</p>
-  </div>
 
-  <section id="newsletter">
-    <div class="news-content">
-      <div class="news-text">
-        <h1>Subscribe to our <br>newsletter</h1>
-        <p>Stay Updated about the latest products</p>
-      </div>
-      <form id="news-form" class="news-form" action="" method="">
-        <input type="email" id="email" name="email" placeholder="email" required><br>
-        <input type="submit" value="Subscribe">
-      </form>
-    </div>
-  </section>
+ <?php include 'components/user_newsletter.php'?>
 
   <?php include 'components/user_footer.php'?>
 
