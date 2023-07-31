@@ -20,7 +20,7 @@
 
     <div>
       <ul id="navbar">
-        <li><a class="active" href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="shop.php">Shop</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact Us</a></li>
@@ -41,9 +41,13 @@
             $total_cart_counts = $count_cart_items->rowCount();
          ?>
 
+        <a href="search.php"><i class="fas fa-search" title="Search"></i></a>
+
       <a href="wishlist.php"><i class="fas fa-heart"></i><span>[<?= $total_wishlist_counts;?>]</span></a>
 
       <a href="cart.php"><i class="fas fa-cart-shopping"></i><span class="icon-title">CART</span><span>[<?= $total_cart_counts; ?>]</span></a>
+      
+      <div id="menu-btn" class="fas fa-bars"></div>
 
           <div id="user-btn" class="fas fa-user">
             <span class="icon-title">

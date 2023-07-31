@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
       </div>
       
       <div class="form-input-wrapper">
-         <i class="fa-solid fa-key .form-icon"></i>
+         <i class="fa-solid fa-key form-icon"></i>
          <input type="password" name="cpass" required placeholder="confirm password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       </div>
       

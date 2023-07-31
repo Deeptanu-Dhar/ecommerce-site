@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-   $email = sha1($_POST['email']);
+   $email = ($_POST['email']);
    $email = filter_var($email, FILTER_SANITIZE_STRING);
    $cpass = sha1($_POST['cpass']);
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
@@ -34,6 +34,7 @@ if(isset($_POST['submit'])){
       else{
          $insert_user = $conn->prepare("INSERT INTO `users`(name, password, email) VALUES(?,?,?)");
          $insert_user->execute([$name, $cpass, $email]);
+         header('location:user_login.php');
          $message[]= 'New User registered !';
       }
    }

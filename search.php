@@ -45,18 +45,34 @@ else{
 
 
 <?php include 'components/user_header.php'?>
-<?php include 'components/script.php'?>
- <!-- include 'components/wishlist_cart.php' -->
+<?php include 'components/wishlist_cart.php'?>
+
+
+
+<div class="shop-products-heading" style="margin-top: 20px;">
+    <h1>Search Products</h1>
+  </div>
+
+<section class="search-form">
+    <form action="" method="POST">
+      <input type="text" name="search" required placeholder="Search Items" maxlength="100" oninput="this.value = this.value.replace(/\s/g, '')">
+      <button type="submit" class="fa-solid fas fa-search" name="submit_search"></button>
+    </form>
+</section>
 
   <section class="shop-products">
 
-  <div class="shop-products-heading">
-    <h1>SHOP PRODUCTS</h1>
-  </div>
+    <?php 
 
-   <?php
-     while($row = $result->fetch_assoc()){
-   ?>
+        if (isset($_POST['search']) or isset($_POST['submit_search'])) {
+          $search=$_POST['search'];
+          $search=filter_var($search, FILTER_SANITIZE_STRING); 
+        $select_products=$conn->prepare("SELECT * FROM products where product_name like '%{$search}%'");
+        $select_products->execute();
+        if($select_products->rowCount()>0){
+            while($row=$select_products->fetch(PDO::FETCH_ASSOC)){
+     ?>
+
    <form action="" method="post" class="box">
       <input type="hidden" name="pid" value="<?php echo $row['product_id']; ?>">
       <input type="hidden" name="name" value="<?php echo $row['product_name']; ?>">
@@ -72,102 +88,18 @@ else{
       </div>
       <input type="submit" value="add to cart" class="btn" name="add_to_cart">
    </form>
-   <?php
-      };
-   ?>
+   <?php 
+
+        }
+        }else{
+            echo '<div class="empty-text"><p class="empty">No items found !</p></div>';
+        }
+
+        }
+    ?>
 </section>
 
-<div class="page-info">
-
-      <?php 
-
-      if(!isset($_GET['page-nr'])){
-         $page = 1;
-      }
-      else{
-         $page=$_GET['page-nr'];
-      }
-
-      ?>
-
-      showing <span><?php echo $page?></span> of <span><?php echo $pages ?></span>
-   </div>
-
-   <div class="pagination">
-
-      <a href="?page-nr=1"><i class="fa-solid fa-angles-left"></i></a>
-
-      <?php 
-
-      if(isset($_GET['page-nr']) && $_GET['page-nr'] > 1){
-         ?>
-
-         <a href="?page-nr=<?php  echo $_GET['page-nr'] -1 ?>"><i class="fa-solid fa-angle-left"></i></a>
-
-         <?php
-      }
-      else{
-         ?> 
-
-         <a><i class="fa-solid fa-angle-left"></i></a>
-
-         <?php
-      }
-
-      ?>
-
-      <div class="page-numbers">
-
-         <?php 
-
-         for ($counter=1; $counter <= $pages ; $counter++) { 
-            ?>
-
-            <a href="?page-nr=<?php echo $counter ?>"><?php echo $counter ?></a>
-
-            <?php
-         }
-
-         ?>
-      </div>
-
-      <?php 
-
-      if(!isset($_GET['page-nr'])){
-         ?>
-
-         <a href="?page-nr=2"><i class="fa-solid fa-angle-right"></i></a>
-
-         <?php
-      }
-      else{
-       if($_GET['page-nr'] >= $pages){
-        ?> 
-
-        <a><i class="fa-solid fa-angle-right"></i></a>
-
-        <?php
-     }
-     else{
-
-      ?>
-
-      <a href="?page-nr=<?php echo $_GET['page-nr'] + 1 ?>"><i class="fa-solid fa-angle-right"></i></a>
-
-      <?php
-
-   }
-}
-
-?>
-
-<a href="?page-nr=<?php echo $pages ?>"><i class="fa-solid fa-angles-right"></i></a>
-
-
-
-</div>
-
-<?php include 'components/user_newsletter.php'?>
+<?php include 'components/user_newsletter.php' ?>
 
  <?php include 'components/user_footer.php'?>
 

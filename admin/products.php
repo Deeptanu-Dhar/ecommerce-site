@@ -67,7 +67,7 @@ else{
       <a href="add_products.php" class="btn">Add products</a>
    </div>
 
-
+<section id="produts-table">
    <table class="table-content">  
 
       <thead>  
@@ -109,7 +109,7 @@ else{
                <td><img src="<?php echo $row['product_image']; ?>" alt=""></td>
                <td><h5><?php echo $row['product_name']; ?></h5></td>
                <td><p><?php echo $row['product_description']; ?></p></td>
-               <td><h4><?php echo $row['product_price']; ?></h4></td>
+               <td><h4>₹<?php echo $row['product_price']; ?></h4></td>
                <td><a href="update_products.php?update=<?php echo $row["product_id"]; ?>"class="btn">Update</a></td>
                <td><a href="products.php?delete=<?php echo $row["product_id"]; ?>" onclick="return confirm('Delete this product ?');" class="delete-btn">Delete</a></td>
 
@@ -124,6 +124,7 @@ else{
       </tbody>
 
    </table>
+   </section>
 
    
 

@@ -24,7 +24,7 @@
     <?php 
         $category = $_GET['category'];
     ?>
-    <title>SHOP <?= $category ?> PRODUCTS</title>
+    <title>Shop <?= $category ?> Products</title>
 
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/c96e89392a.js" crossorigin="anonymous"></script>
@@ -56,7 +56,7 @@
 
 
   <div class="shop-products-heading">
-    <h1>SHOP <?= $category ?> PRODUCTS</h1>     
+    <h1>Shop <?= $category ?> Products</h1>     
   </div>
 
    <?php

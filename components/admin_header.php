@@ -25,7 +25,7 @@
 
   <section id="header">
     <div class="logo">
-      <a href="#">ARTiO<span>[ADMIN]</span></a>
+      <a href="dashboard.php">ARTiO<span>[ADMIN]</span></a>
     </div>
 
     <div>
